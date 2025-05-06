@@ -2,3 +2,4 @@ google-auth
 google-api-python-client
 qrcode
 python-dotenv
+Pillow
