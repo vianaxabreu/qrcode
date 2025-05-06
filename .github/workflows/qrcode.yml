@@ -29,7 +29,7 @@ jobs:
 
     # Run the QR code generation script
     - name: Run QR code generator
-      run: python generate_qrcode.py
+      run: python main.py
 
     # Commit and push changes to the repo (optional)
     - name: Commit and push changes
