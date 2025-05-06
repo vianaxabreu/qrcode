@@ -5,12 +5,12 @@ on:
     - cron: '*/10 * * * *'  # Runs every 10 minutes
   workflow_dispatch:  # Trigger manually
 env:
-  FORM_URL_BASE: ${{ secrets.CODE_LENGTH }}
-  OUTPUT_DIR: ${{ secrets.FORM_URL_BASE }}
-  CODE_LENGTH: ${{ secrets.SPREADSHEET_ID }}
-  SPREADSHEET_ID: ${{ secrets.CODE_LENGTH }}
-  RANGE_NAME: ${{ secrets.FORM_URL_BASE }}
-  SA_PATH: ${{ secrets.SPREADSHEET_ID }}
+  FORM_URL_BASE: ${{ secrets.FORM_URL_BASE }}
+  OUTPUT_DIR: ${{ secrets.OUTPUT_DIR }}
+  CODE_LENGTH: ${{ secrets.CODE_LENGTH }}
+  SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+  RANGE_NAME: ${{ secrets.RANGE_NAME }}
+  SA_PATH: ${{ secrets.SA_PATH }}
 
 jobs:
   generate_qrcode:
