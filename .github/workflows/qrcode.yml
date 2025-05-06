@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '*/10 * * * *'  # Runs every 10 minutes
   workflow_dispatch:  # Trigger manually
+
 env:
   FORM_URL_BASE: ${{ secrets.FORM_URL_BASE }}
   OUTPUT_DIR: ${{ secrets.OUTPUT_DIR }}
@@ -15,6 +16,8 @@ env:
 jobs:
   generate_qrcode:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repo
@@ -45,4 +48,4 @@ jobs:
         git config --global user.email "actions@github.com"
         git add output/
         git commit -m "New QR code generated at $(date)" || echo "No changes"
-        git push
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
