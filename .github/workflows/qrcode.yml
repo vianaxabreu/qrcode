@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: '*/10 * * * *'  # Runs every 10 minutes
   workflow_dispatch:  # Trigger manually
+env:
+  FORM_URL_BASE: ${{ secrets.CODE_LENGTH }}
+  OUTPUT_DIR: ${{ secrets.FORM_URL_BASE }}
+  CODE_LENGTH: ${{ secrets.SPREADSHEET_ID }}
+  SPREADSHEET_ID: ${{ secrets.CODE_LENGTH }}
+  RANGE_NAME: ${{ secrets.FORM_URL_BASE }}
+  SA_PATH: ${{ secrets.SPREADSHEET_ID }}
 
 jobs:
   generate_qrcode:
