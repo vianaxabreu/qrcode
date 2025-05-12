@@ -26,3 +26,5 @@ venv_qrcode/
 # GitHub Actions cache/temp files
 *.cache
 *.tmp
+
+*.json

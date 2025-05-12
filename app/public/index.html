@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login with GitHub</title>
+</head>
+<body>
+  <h1>Login with GitHub</h1>
+  <button onclick="loginWithGitHub()">Login</button>
+
+  <script>
+    function loginWithGitHub() {
+      const clientId = "Ov23liKCfP18ezZGnfV3";
+      const redirectUri = "http://localhost:8080/callback"; // must match what you set on GitHub
+
+      const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=user:email`;
+
+      window.location.href = githubAuthUrl;
+    }
+  </script>
+</body>
+</html>
