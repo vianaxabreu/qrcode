@@ -72,7 +72,7 @@ def main():
 
     code = generate_random_code(CODE_LENGTH)
     # full_url = f"{FORM_URL_BASE}{code}"
-    full_urlf"{FORM_URL_BASE}"
+    full_url = f"{FORM_URL_BASE}"
     # Generate QR code
     qr = qrcode.make(full_url)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
